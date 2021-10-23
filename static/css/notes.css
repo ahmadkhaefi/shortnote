@@ -1,14 +1,16 @@
-#send-icon {
+#send-button {
     animation-name: move;
-    animation-duration: 0.5s
+    animation-duration: 0.2s
 }
 
 @keyframes move {
     from {
-        transform: translateX(-5px)
+        transform: translateX(-3px);
+        opacity: 0
     }
     to {
-        transform: translateX(0)
+        transform: translateX(0);
+        opacity: 0.5
     }
 }
 
