@@ -8,7 +8,7 @@ SECRET_KEY = SECRET
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://getshortnote.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
