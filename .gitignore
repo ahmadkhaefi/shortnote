@@ -1,5 +1,2 @@
 db.sqlite3
 *.pyc
-static/media/*
-!static/media/shortnote.svg
-shortnote/secret.py
