@@ -1,10 +1,9 @@
 from pathlib import Path
 import os
-from .secret import SECRET_KEY as SECRET
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = SECRET
+SECRET_KEY = 'django-insecure-8k%mh+6@8#+s^^9bnkz9gj=+4)ed4f!%(yvtyh4$@586^ukubx'
 
 DEBUG = True
 
@@ -87,5 +86,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
