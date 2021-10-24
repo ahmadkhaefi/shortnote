@@ -6,41 +6,41 @@ shortnote write your short notes
 {% endblock title %}
 
 {% block body %}
-<div class="container position-relative d-flex align-items-center justify-content-center flex-column vh-100">
-        <div class="card border-0 align-items-center text-center" style="width: 24rem">
-            <img src="{% static 'media/bg.png' %}" width="200" class="img-fluid mb-3" alt="type">
-            <div class="card-body w-100">
-                {% if not request.user.is_authenticated %}
-                    <form action="" method="POST">
-                        {% csrf_token %}
-                        <div class="mb-3">
-                            <input name="username" type="text" class="form-control p-2" style="background-color: var(--bs-gray-200)" placeholder="enter a username">
-                        </div>
-                        <div class="mb-3">
-                            <input  name="password" type="password" class="form-control p-2" style="background-color: var(--bs-gray-200)" placeholder="enter a password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">sign up</button>
-                    </form>
-                {% else %}
-                        <a class="me-2" href="#"> <img src="{% static 'media/default-avatar.png' %}" width="40" alt="avatar"></a>
-                        <a href="{% url 'notes' %}" class="btn btn-primary">
-                            write your notes
-                            <i class="far fa-arrow-right"></i>
-                        </a>
-                {% endif %}
-            </div>
+<div class="container d-flex align-items-center justify-content-center flex-column vh-100">
+    <div class="card border-0 align-items-center text-center" style="width: 24rem">
+        <img src="{% static 'media/bg.png' %}" width="200" class="img-fluid mb-3" alt="type">
+        <div class="card-body w-100">
+            {% if not request.user.is_authenticated %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input name="username" type="text" class="form-control p-2" style="background-color: var(--bs-gray-200)" placeholder="enter a username">
+                    </div>
+                    <div class="mb-3">
+                        <input  name="password" type="password" class="form-control p-2" style="background-color: var(--bs-gray-200)" placeholder="enter a password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">sign up</button>
+                </form>
+            {% else %}
+                    <a class="me-2" href="#"> <img src="{% static 'media/default-avatar.png' %}" width="40" alt="avatar"></a>
+                    <a href="{% url 'notes' %}" class="btn btn-primary">
+                        write your notes
+                        <i class="far fa-arrow-right"></i>
+                    </a>
+            {% endif %}
         </div>
-    <footer class="position-absolute bottom-0 text-center py-2">
-        <div class="container pb-2 d-flex align-items-center">
-            <div class="me-2">
-                <img src="{% static 'media/shortnoteicon.svg' %}" width="25" class="img-fluid" alt="logo" draggable="false">
-            </div>
-            <div>
-                shortnote based on
-                <a href="https://djangoproject.com"><img src="{% static 'media/django.svg' %}" width="15" alt="django" draggable="false"></a>
-                web framework
-            </div>
-        </div>
-    </footer>
+    </div>
 </div>
+<footer class="my-3">
+    <div class="d-flex flex-row justify-content-center mb-3">
+        <a href="https://github.com" class="link-dark me-2"><i class="fab fa-github fs-4"></i></a>
+        <a href="https://github.com/ahmadkhaefi/shortnote/issues" class="link-dark"><i class="fal fa-bug fs-4"></i></a>
+    </div>
+    <div class="d-flex flex-row justify-content-center">
+        <img src="{% static 'media/shortnoteicon.svg' %}" width="25" class="img-fluid me-2" alt="logo" draggable="false">
+        shortnote based on
+        <a href="https://djangoproject.com" class="mx-1"><img src="{% static 'media/django.svg' %}" width="15" alt="django" draggable="false"></a>
+        web framework
+    </div>
+</footer>
 {% endblock body %}
