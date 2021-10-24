@@ -52,12 +52,8 @@ WSGI_APPLICATION = 'shortnote.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dob1377uenggi',
-        'HOST':'ec2-34-194-120-237.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'ynikwvzptejjvy',
-        'PASSWORD': '4ca55b8825043f5bbb96a99cd6342808810103d370e16681991ca1a4ecc00380'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
