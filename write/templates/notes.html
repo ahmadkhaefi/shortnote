@@ -8,22 +8,23 @@ overview of notes
 {% block body %}
 <nav class="navbar navbar-expand-lg bg-white shadow-sm position-sticky top-0" style="z-index: 1000">
   <div class="container-fluid">
-    <div class="col-3">
+    <div class="col-lg-3 col-2">
         <a class="" href="{% url 'home' %}">
-            <img src="{% static 'media/shortnote.svg' %}" width="125" alt="logo">
+            <img src="{% static 'media/shortnote.svg' %}" width="125" alt="logo" class="d-none d-lg-block">
+            <img src="{% static 'media/shortnoteicon.svg' %}" width="35" alt="logo" class="d-lg-none">
         </a>
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 col-8">
         <form action="" method="GET" class="w-100 me-2 d-flex">
             <div class="w-100 position-relative">
-                <input type="text" class="form-control rounded-1" placeholder="search for your shortnotes" id="search-input" autocomplete="off">
+                <input type="text" class="form-control rounded-1" placeholder="search shortnotes" id="search-input" autocomplete="off">
                 <button type="button" class="btn-transparent position-absolute top-0" style="transform: translateY(25%); right: 10px; opacity: 0.4">
                     <i class="far fa-search"></i>
                 </button>
             </div>
         </form>
     </div>
-    <div class="col-3 text-right">
+    <div class="col-lg-3 col-2 text-right">
         <a class="" href="#">
             <img src="{% static 'media/default-avatar.png' %}" width="40" alt="avatar">
         </a>
@@ -33,7 +34,7 @@ overview of notes
 <div class="container py-4">
     <div class="d-flex align-items-center flex-column" id="shortnotes">
         {% for shortnote in shortnotes %}
-            <div class="mb-3" style="max-width: 540px; width: 540px; z-index: 0">
+            <div class="mb-3" style="width: 540px; max-width: 100%">
                 <div class="card col-12 p-2 border-0 bg-{{shortnote.color}}" style="--bs-bg-opacity: 0.075" id="shortnote">
                     <div class="card-body">
                         <div>
@@ -55,7 +56,7 @@ overview of notes
 </div>
 
 <div class="position-fixed bottom-0 py-3 d-flex justify-content-center w-100" style="z-index: 1000" id="write-section">
-    <div class="col-8 d-flex flex-row align-items-stretch">
+    <div class="col-11 col-lg-8 d-flex flex-row align-items-stretch">
         <form method="POST" class="w-100 d-flex" id="write-form">
             {% csrf_token %}
             <div class="position-relative w-100 me-2">

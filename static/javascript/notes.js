@@ -20,10 +20,10 @@ var $pinClass = document.getElementById('pin-icon').classList
 function changePin() {
     if ($pinClass.contains('bi-pin-fill')) {
         $pinClass.replace('bi-pin-fill', 'bi-pin-angle-fill')
-        $pinStatus = 'True'
+        $pinStatus = 'False'
     } else if ($pinClass.contains('bi-pin-angle-fill')) {
         $pinClass.replace('bi-pin-angle-fill', 'bi-pin-fill')
-        $pinStatus = 'False'
+        $pinStatus = 'True'
     }
 }
 document.getElementById('pin-button').addEventListener('click', changePin)
@@ -88,7 +88,7 @@ $(document).on('submit', '#write-form', function($event){
     })
     .done(function() {
         $('#shortnotes').prepend(`
-        <div class="row mb-3" style="max-width: 540px; width: 540px">
+        <div class="row mb-3" style="width: 540px; max-width: 100%">
             <div class="card col-12 p-2 border-0 bg-${$color}" style="--bs-bg-opacity: 0.075">
                 <div class="card-body">
                     <strong class="card-subtitle fs-6 text-${$color} user-select-none">

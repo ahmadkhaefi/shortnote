@@ -21,3 +21,10 @@
     background-color: #fff;
     box-shadow: 0 .125rem .5rem rgba(0,0,0,.075) !important
 }
+
+.navbar-toggler:focus {
+    box-shadow: none
+}
+.navbar-light .navbar-toggler {
+    border: none
+}
